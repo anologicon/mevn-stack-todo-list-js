@@ -17,7 +17,7 @@ var bodyParser = require('body-parser');
 var config = require('./app/Config');
 
 // Connect to database
-mongoose.connect(config.DB);
+mongoose.connect(config.DB, {useNewUrlParser: true});
 
 // Sends static files from the public path directory
 app.use(express.static(path.join(__dirname, '/public')));
