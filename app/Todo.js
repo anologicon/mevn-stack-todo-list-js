@@ -12,7 +12,7 @@ var mongoose = require('mongoose');
      }
  },
   {
-      collation: 'todos'
+      collection: 'todos'
   }
 );
 
