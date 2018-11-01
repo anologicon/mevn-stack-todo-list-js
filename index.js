@@ -14,7 +14,7 @@ var bodyParser = require('body-parser');
 
 // Require configuration file defined in app/Config.js
 
-var config = require('./app/Config');
+var config = require('.\/app\/Config');
 
 // Connect to database
 mongoose.connect(config.DB, {useNewUrlParser: true});
