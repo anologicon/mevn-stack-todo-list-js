@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-var port = config.APP_PORT || 8080
+var port = (process.env.PORT || 5000)
 
 app.listen(port); // Listen on port defined in config file
 
