@@ -14,7 +14,17 @@ todoRoutes.route('/all').get(function (req, res, next) {
             return next(new Error(err));
         }
 
-        res.json(todos); //return all todos
+        var todosModel = todos.map(function(todo) {
+            return {
+                id: todo._id,
+                name: todo.name,
+                done: todo.done,
+            }
+        });
+
+        console.log(todosModel);
+
+        res.json(todosModel); //return all todos
     });
 });
 

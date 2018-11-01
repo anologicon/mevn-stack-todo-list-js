@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-var port = config.APP_PORT || 7000
+var port = config.APP_PORT || 8080
 
 app.listen(port); // Listen on port defined in config file
 
@@ -50,7 +50,12 @@ app.use(function(req, res, next){
         // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
 
-        // Pass to next layer of middleware
+     // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+
+    // Pass to next layer of middleware
     next();
 });
 
