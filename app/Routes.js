@@ -23,7 +23,7 @@ todoRoutes.route('/all').get(function (req, res, next) {
         });
 
         console.log(todosModel);
-
+        res.set("Access-Control-Allow-Origin", "*");
         res.json(todosModel); //return all todos
     });
 });
