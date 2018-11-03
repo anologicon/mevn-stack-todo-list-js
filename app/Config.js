@@ -3,7 +3,7 @@ var database_uri;
 
 console.log(os.hostname());
 
-if (os.hostname().indexOf("local") > -1) {
+if (os.hostname() == 'LAPTOP-S2EVGDLT') {
 	database_uri = 'mongodb://localhost:27017/todos';
 	console.log('Banco local');
 } else {
