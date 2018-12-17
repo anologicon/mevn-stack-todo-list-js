@@ -45,14 +45,14 @@ todoRoutes.route('/add').post(function (req, res) {
 
 // delete a todo item
 
-todoRoutes.route('/delete/:id').get(function (req, res, next) {
+todoRoutes.route('/delete/:id').delete(function (req, res, next) {
     var id = req.params.id;
    
     Todo.findByIdAndRemove(id, function (err, todo) {
         if (err) {
             return next(new Error('Todo was not found'));
         }
-        res.json('Successfully removed'); 
+        res.json({type: true,text:'Successfully removed'}); 
     });
 });
 
